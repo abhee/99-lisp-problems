@@ -1,6 +1,6 @@
 #lang racket
 
-;; Question: Find number of elements in a list
+;; Problem: Find number of elements in a list
 
 (define (length lst)
   (define (length-rec lst i)

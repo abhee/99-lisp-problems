@@ -1,6 +1,6 @@
 #lang racket
 
-;; Question: Find the last but one box of a list.
+;; Problem: Find the last but one box of a list.
 ;; Example: (my-but-last '(a b c d)) => (c d)
 
 (define (my-but-last lst)

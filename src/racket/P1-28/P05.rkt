@@ -1,5 +1,5 @@
 #lang racket
-;; Question: Reverse a list
+;; Problem: Reverse a list
 
 (define (reverse lst)
   (if (empty? lst)
