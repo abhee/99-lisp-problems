@@ -9,10 +9,10 @@
       '()
       (let ((head (first lst))
             (tail (rest lst)))
-        ; If head is a list, flatten it
+        ; If head is a list, flatten it and append it to flattened tail list
         (if (list? head)
             (append (my-flatten head) (my-flatten tail))
-            ; if head is not a list, cons it onto flattened tail
+            ; if head is not a list, cons it onto flattened tail list
             (cons head (my-flatten tail))))))
 
 ; Tests
@@ -20,8 +20,3 @@
 (equal? (my-flatten '((a) (b) (c) (d))) (flatten '((a) (b) (c) (d))))
 (equal? (my-flatten '()) (flatten '()))
 (equal? (my-flatten '(a b c d e f g h)) (flatten '(a b c d e f g h)))
-
-
-
-
-
