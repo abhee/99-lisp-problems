@@ -1,5 +1,7 @@
 #lang racket
 
+(require typed/racket)
+
 ;; Problem: Flatten a nested list structure.
 ;; Example:
 ;; (my-flatten '(a (b (c d) e))) => '(a b c d e)
@@ -16,7 +18,7 @@
             (cons head (my-flatten tail))))))
 
 ; Tests
-(equal? (my-flatten '(a (b (c d) e) (12 34) (456))) (flatten '(a (b (c d) e) (12 34) (456))))
-(equal? (my-flatten '((a) (b) (c) (d))) (flatten '((a) (b) (c) (d))))
-(equal? (my-flatten '()) (flatten '()))
-(equal? (my-flatten '(a b c d e f g h)) (flatten '(a b c d e f g h)))
+(assert (equal? (my-flatten '(a (b (c d) e) (12 34) (456))) (flatten '(a (b (c d) e) (12 34) (456)))))
+(assert (equal? (my-flatten '((a) (b) (c) (d))) (flatten '((a) (b) (c) (d)))))
+(assert (equal? (my-flatten '()) (flatten '())))
+(assert (equal? (my-flatten '(a b c d e f g h)) (flatten '(a b c d e f g h))))
