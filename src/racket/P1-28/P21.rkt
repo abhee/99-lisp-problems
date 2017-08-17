@@ -5,9 +5,8 @@
 
 (define (insert-at stuff lst pos )
   (cond
-    [(empty? lst) '()]
     [(= pos 0) lst]
-    [(= pos 1) (cons stuff (cons (first lst) (rest lst)))]
+    [(or (= pos 1) (empty? lst)) (cons stuff lst)] 
     [else (cons (first lst) (insert-at stuff (rest lst) (- pos 1)))]))
 
 
@@ -16,4 +15,5 @@
 (equal? (insert-at 'z '(a b c d e f) 1) '(z a b c d e f))
 (equal? (insert-at 'p '(a b c d e f) 0) '(a b c d e f))
 (equal? (insert-at 'p '(a b c d e f) 6) '(a b c d e p f))
-(equal? (insert-at 'p '(a b c d e f) 7) '(a b c d e f))
+(equal? (insert-at 'p '(a b c d e f) 7) '(a b c d e f p))
+(equal? (insert-at 'p '() 12) '(p))
