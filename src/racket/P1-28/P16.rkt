@@ -1,6 +1,5 @@
 #lang racket
 
-
 ;; Drop every N'th element from a list.
 ;; Example: (drop '(a b c d e f g h i k) 3) => '(a b d e g h k)
 
