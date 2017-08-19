@@ -4,19 +4,10 @@
 ;; Example: (range 4 9) => '(4 5 6 7 8 9)
 
 (define (range start end)
-  (define (count-up c)
-    (if (> c end)
-        '()
-        (cons c (count-up (+ c 1)))))
-
-   (define (count-down c)
-    (if (< c end)
-        '()
-        (cons c (count-down (- c 1)))))
-
-  (if (> start end)
-      (count-down start)
-      (count-up start)))
+  (cond
+    [(= start end) (list start)]
+    [(> start end) (cons start (range (- start 1) end))]
+    [else (cons start (range (+ start 1) end))]))
 
 
 ;; Tests
