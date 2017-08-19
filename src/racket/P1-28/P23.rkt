@@ -18,14 +18,11 @@
     [else (cons (first lst) (remove-at (rest lst) (- pos 1)))]))
 
 (define (rnd-select lst n)
-  "This is a docstring"
   (if (or (empty? lst) (= n 0))
       '()
       (let
           ((pos (random 1 (length lst))))
-        (cons (nth lst pos) (rnd-select (remove-at lst pos) (- n 1))))))
-  
-  
+        (cons (nth lst pos) (rnd-select (remove-at lst pos) (- n 1))))))  
 
 
 
