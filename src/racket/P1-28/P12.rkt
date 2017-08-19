@@ -1,7 +1,6 @@
 #lang racket
 
 ;; Decode a run-length encoded list.
-
 ;; Example: (decode ((4 a) b (2 c) (2 a) d (4 e))) => '(a a a a b c c a a d e e e e)
 
 (define (decode lst)
